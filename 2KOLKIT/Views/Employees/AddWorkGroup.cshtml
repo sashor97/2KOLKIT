@@ -1,0 +1,17 @@
+﻿@model  _2KOLKIT.Models.AddWorkGroup
+@{
+    ViewBag.Title = "AddWorkGroup";
+}
+
+<h2>AddWork group to user:@Model.EmployeeName</h2>
+@using (@Html.BeginForm("AddWorkGroup", "Employees"))
+        {
+    <div class="form-group">
+    @Html.LabelFor(m => m.WorkGroupId)
+    @Html.DropDownListFor(m=>m.WorkGroupId,new SelectList(Model.workGroups,"WorkGroupId","Name",new { @class = "form-control" }))
+</div>
+@Html.HiddenFor(m=>m.EmployeeId)
+<button type="submit" class="btn btn-primary">Add</button>
+}
+
+
