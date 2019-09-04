@@ -13,7 +13,7 @@ namespace _2KOLKIT.Models
         public int EmployeeId { get; set; }
 
         [Required]
-        [RegularExpression(@"\w{5}")]
+        [RegularExpression(@"^[a-zA-Z]{2,20} \d{1,4}", ErrorMessage = "ИмеАдреса број е правилниот формат кој треба да го внесете")]
         public string Name { get; set; }
 
         [Range(1,99,ErrorMessage ="Nevalidni godini")]
